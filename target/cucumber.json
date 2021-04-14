@@ -3,13 +3,12 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-04-14T02:34:35.466Z",
+        "start_timestamp": "2021-04-14T02:59:14.947Z",
         "before": [
           {
             "result": {
-              "error_message": "org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 90\nCurrent browser version is 89.0.4389.128 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Timofeis-MBP.home\u0027, ip: \u0027fe80:0:0:0:1c16:604a:690d:4548%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.7\u0027, java.version: \u00271.8.0_261\u0027\nDriver info: driver.version: Driver\nremote stacktrace: 0   chromedriver                        0x0000000107fc6cc9 chromedriver + 2718921\n1   chromedriver                        0x0000000108683143 chromedriver + 9781571\n2   chromedriver                        0x0000000107d58218 chromedriver + 168472\n3   chromedriver                        0x0000000107d7dd59 chromedriver + 322905\n4   chromedriver                        0x0000000107d799bc chromedriver + 305596\n5   chromedriver                        0x0000000107d75fd1 chromedriver + 290769\n6   chromedriver                        0x0000000107dadfb2 chromedriver + 520114\n7   chromedriver                        0x0000000107da8ed3 chromedriver + 499411\n8   chromedriver                        0x0000000107d7fd9f chromedriver + 331167\n9   chromedriver                        0x0000000107d8103d chromedriver + 335933\n10  chromedriver                        0x0000000107f915f9 chromedriver + 2500089\n11  chromedriver                        0x0000000107f9f8a5 chromedriver + 2558117\n12  chromedriver                        0x0000000107fa080f chromedriver + 2562063\n13  chromedriver                        0x0000000107f75741 chromedriver + 2385729\n14  chromedriver                        0x0000000107fa0d1f chromedriver + 2563359\n15  chromedriver                        0x0000000107f86c3c chromedriver + 2456636\n16  chromedriver                        0x0000000107fba398 chromedriver + 2667416\n17  chromedriver                        0x0000000107fba55a chromedriver + 2667866\n18  chromedriver                        0x0000000107fcbd18 chromedriver + 2739480\n19  libsystem_pthread.dylib             0x00007fff6d8e4109 _pthread_start + 148\n20  libsystem_pthread.dylib             0x00007fff6d8dfb8b thread_start + 15\n\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)\n\tat org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)\n\tat org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)\n\tat java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)\n\tat java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)\n\tat java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)\n\tat java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499)\n\tat java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486)\n\tat java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)\n\tat java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)\n\tat java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)\n\tat java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)\n\tat org.openqa.selenium.remote.RemoteWebDriver.\u003cinit\u003e(RemoteWebDriver.java:131)\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:181)\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:168)\n\tat org.openqa.selenium.chrome.ChromeDriver.\u003cinit\u003e(ChromeDriver.java:123)\n\tat utils.Driver.getDriver(Driver.java:14)\n\tat hooks.Hooks.setUp(Hooks.java:12)\n",
-              "duration": 2587000000,
-              "status": "failed"
+              "duration": 2544000000,
+              "status": "passed"
             },
             "match": {
               "location": "hooks.Hooks.setUp()"
@@ -23,6 +22,7 @@
         "after": [
           {
             "result": {
+              "duration": 79000000,
               "status": "passed"
             },
             "match": {
@@ -35,8 +35,8 @@
         "steps": [
           {
             "result": {
-              "duration": 1000000,
-              "status": "skipped"
+              "duration": 5004000000,
+              "status": "passed"
             },
             "line": 3,
             "name": "Login in to main page",
