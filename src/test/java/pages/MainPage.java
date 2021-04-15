@@ -1,11 +1,11 @@
 package pages;
 
 import org.openqa.selenium.support.PageFactory;
-import utils.Driver;
+import utils.WebDriverUtils;
 
 public class MainPage {
 
     public MainPage() {
-        PageFactory.initElements(Driver.getDriver(), this);
+        PageFactory.initElements(WebDriverUtils.getDriver(), this);
     }
 }
