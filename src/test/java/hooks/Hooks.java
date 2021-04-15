@@ -6,6 +6,7 @@ import io.cucumber.java.Before;
 
 import utils.ConfigReaderUtils;
 import utils.WebDriverUtils;
+import utils.СucumberLogUtils;
 
 
 public class Hooks {
@@ -13,6 +14,7 @@ public class Hooks {
     @Before
     public void setUp(Scenario currentScenario) {
         WebDriverUtils.getDriver().get(ConfigReaderUtils.getProperty("url"));
+        СucumberLogUtils.initScenario(currentScenario);
     }
 
     @After
