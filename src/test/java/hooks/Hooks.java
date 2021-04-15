@@ -1,19 +1,22 @@
 package hooks;
 
+import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import utils.ConfigReader;
-import utils.Driver;
+
+import utils.ConfigReaderUtils;
+import utils.WebDriverUtils;
+
 
 public class Hooks {
 
     @Before
-    public void setUp() {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
+    public void setUp(Scenario currentScenario) {
+        WebDriverUtils.getDriver().get(ConfigReaderUtils.getProperty("url"));
     }
 
     @After
     public void tearDown() {
-        Driver.closeDriver();
+        WebDriverUtils.closeDriver();
     }
 }

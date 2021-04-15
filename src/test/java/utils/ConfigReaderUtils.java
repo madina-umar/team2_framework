@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ConfigReader {
+public class ConfigReaderUtils {
 
     public static String getProperty(String key) {
         String propertyPath = "configurations.properties";
