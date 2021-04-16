@@ -9,6 +9,9 @@ formatter.scenario({
   "description": "",
   "keyword": "Scenario"
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "I navigate to Project website",
   "keyword": "Given "
@@ -16,19 +19,9 @@ formatter.step({
 formatter.match({
   "location": "MainPageSteps.iNavigateToProjectWebsite()"
 });
+formatter.write("2021-04-16 14:36:32 PASS: Successfully navigated to the url");
 formatter.result({
-  "error_message": "java.lang.NullPointerException\n\tat utils.CucumberLogUtils.logPass(CucumberLogUtils.java:21)\n\tat implementation.MainPageImplementation.navigateToPage(MainPageImplementation.java:25)\n\tat steps.MainPageSteps.iNavigateToProjectWebsite(MainPageSteps.java:14)\n\tat ✽.I navigate to Project website(file:src/test/resources/features/mainPage(PLAN-1).feature:4)\n",
-  "status": "failed"
-});
-formatter.step({
-  "name": "I should see the \"PlanIT\" page",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "MainPageSteps.iShouldSeeThePage(String)"
-});
-formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "I verify the following dashboards are displayed:",
@@ -64,7 +57,17 @@ formatter.step({
 formatter.match({
   "location": "MainPageSteps.iVerifyTheFollowingDashboardsAreDisplayed(String\u003e)"
 });
+formatter.write("2021-04-16 14:36:32 PASS: summary dashboard is displayed as expected");
+formatter.write("2021-04-16 14:36:32 PASS: income dashboard is displayed as expected");
+formatter.write("2021-04-16 14:36:32 PASS: expense dashboard is displayed as expected");
+formatter.write("2021-04-16 14:36:32 PASS: forecast dashboard is displayed as expected");
+formatter.write("2021-04-16 14:36:33 PASS: settings dashboard is displayed as expected");
+formatter.write("2021-04-16 14:36:33 PASS: All the dashboards are displayed as expected: [summary, income, expense, forecast, settings]");
+formatter.embedding("image/png", "embedded0.png", null);
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
 });
 });
