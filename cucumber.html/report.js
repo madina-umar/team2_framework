@@ -19,9 +19,21 @@ formatter.step({
 formatter.match({
   "location": "MainPageSteps.iNavigateToProjectWebsite()"
 });
-formatter.write("2021-04-16 14:36:32 PASS: Successfully navigated to the url");
+formatter.write("2021-04-16 14:45:03 PASS: Successfully navigated to the url");
 formatter.result({
   "status": "passed"
+});
+formatter.step({
+  "name": "I should see the \"PlanIT\" page",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "MainPageSteps.iShouldSeeThePage(String)"
+});
+formatter.embedding("image/png", "embedded0.png", null);
+formatter.result({
+  "error_message": "java.lang.AssertionError: 2021-04-16 14:45:06 FAIL: PlanIT page is NOT displayed\n\tat org.junit.Assert.fail(Assert.java:89)\n\tat utils.CucumberLogUtils.logFail(CucumberLogUtils.java:38)\n\tat implementation.MainPageImplementation.validateCurrentPage(MainPageImplementation.java:41)\n\tat steps.MainPageSteps.iShouldSeeThePage(MainPageSteps.java:19)\n\tat ✽.I should see the \"PlanIT\" page(file:src/test/resources/features/mainPage(PLAN-1).feature:5)\n",
+  "status": "failed"
 });
 formatter.step({
   "name": "I verify the following dashboards are displayed:",
@@ -57,15 +69,8 @@ formatter.step({
 formatter.match({
   "location": "MainPageSteps.iVerifyTheFollowingDashboardsAreDisplayed(String\u003e)"
 });
-formatter.write("2021-04-16 14:36:32 PASS: summary dashboard is displayed as expected");
-formatter.write("2021-04-16 14:36:32 PASS: income dashboard is displayed as expected");
-formatter.write("2021-04-16 14:36:32 PASS: expense dashboard is displayed as expected");
-formatter.write("2021-04-16 14:36:32 PASS: forecast dashboard is displayed as expected");
-formatter.write("2021-04-16 14:36:33 PASS: settings dashboard is displayed as expected");
-formatter.write("2021-04-16 14:36:33 PASS: All the dashboards are displayed as expected: [summary, income, expense, forecast, settings]");
-formatter.embedding("image/png", "embedded0.png", null);
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.after({
   "status": "passed"
