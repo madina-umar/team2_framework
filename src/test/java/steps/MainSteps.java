@@ -1,6 +1,7 @@
 package steps;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 
 public class MainSteps {
 
@@ -9,6 +10,8 @@ public class MainSteps {
         System.out.println("Hello");
 
 
-        Thread.sleep(5000);
+        Thread.sleep(2000);
     }
+
+
 }

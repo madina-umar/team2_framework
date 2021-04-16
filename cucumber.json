@@ -1,0 +1,94 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-04-16T16:14:42.175Z",
+        "line": 3,
+        "name": "Landing page should have navigation tabs",
+        "description": "",
+        "id": "landing-page-test;landing-page-should-have-navigation-tabs",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\n\tat utils.CucumberLogUtils.logPass(CucumberLogUtils.java:21)\n\tat implementation.MainPageImplementation.navigateToPage(MainPageImplementation.java:25)\n\tat steps.MainPageSteps.iNavigateToProjectWebsite(MainPageSteps.java:14)\n\tat ✽.I navigate to Project website(file:src/test/resources/features/mainPage(PLAN-1).feature:4)\n",
+              "duration": 3894795809,
+              "status": "failed"
+            },
+            "line": 4,
+            "name": "I navigate to Project website",
+            "match": {
+              "location": "MainPageSteps.iNavigateToProjectWebsite()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1167512,
+              "status": "skipped"
+            },
+            "line": 5,
+            "name": "I should see the \"PlanIT\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"PlanIT\"",
+                  "offset": 17
+                }
+              ],
+              "location": "MainPageSteps.iShouldSeeThePage(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6462974,
+              "status": "skipped"
+            },
+            "line": 6,
+            "name": "I verify the following dashboards are displayed:",
+            "match": {
+              "location": "MainPageSteps.iVerifyTheFollowingDashboardsAreDisplayed(String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "summary"
+                ]
+              },
+              {
+                "cells": [
+                  "income"
+                ]
+              },
+              {
+                "cells": [
+                  "expense"
+                ]
+              },
+              {
+                "cells": [
+                  "forecast"
+                ]
+              },
+              {
+                "cells": [
+                  "settings"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Landing Page test",
+    "description": "",
+    "id": "landing-page-test",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/mainPage(PLAN-1).feature",
+    "tags": []
+  }
+]
