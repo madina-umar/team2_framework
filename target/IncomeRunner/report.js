@@ -19,9 +19,9 @@ formatter.step({
 formatter.match({
   "location": "MainPageSteps.iNavigateToProjectWebsite()"
 });
+formatter.write("2021-04-18 14:53:24 PASS: Successfully navigated to the url");
 formatter.result({
-  "error_message": "java.lang.NullPointerException\n\tat utils.CucumberLogUtils.logPass(CucumberLogUtils.java:21)\n\tat implementation.MainPageImplementation.navigateToPage(MainPageImplementation.java:25)\n\tat steps.MainPageSteps.iNavigateToProjectWebsite(MainPageSteps.java:12)\n\tat ✽.I navigate to Project website(file:src/test/resources/features/income.feature:4)\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
   "name": "I click \"Income\" link",
@@ -31,7 +31,8 @@ formatter.match({
   "location": "IncomeSteps.iClickLink(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "error_message": "java.lang.NullPointerException\n\tat utils.СucumberLogUtils.logPass(СucumberLogUtils.java:21)\n\tat implementation.IncomePageImplementation.clickLink(IncomePageImplementation.java:17)\n\tat steps.IncomeSteps.iClickLink(IncomeSteps.java:14)\n\tat ✽.I click \"Income\" link(file:src/test/resources/features/income.feature:5)\n",
+  "status": "failed"
 });
 formatter.step({
   "name": "I verify the following input fields are displayed:",

@@ -1,148 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/income.feature");
-formatter.feature({
-  "name": "Income page",
-  "description": "",
-  "keyword": "Feature"
-});
-formatter.scenario({
-  "name": "Income page",
-  "description": "",
-  "keyword": "Scenario"
-});
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "I navigate to Project website",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "MainPageSteps.iNavigateToProjectWebsite()"
-});
-formatter.result({
-  "error_message": "java.lang.NullPointerException\n\tat utils.CucumberLogUtils.logPass(CucumberLogUtils.java:21)\n\tat implementation.MainPageImplementation.navigateToPage(MainPageImplementation.java:25)\n\tat steps.MainPageSteps.iNavigateToProjectWebsite(MainPageSteps.java:12)\n\tat ✽.I navigate to Project website(file:src/test/resources/features/income.feature:4)\n",
-  "status": "failed"
-});
-formatter.step({
-  "name": "I click \"Income\" link",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "IncomeSteps.iClickLink(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "I verify the following input fields are displayed:",
-  "rows": [
-    {
-      "cells": [
-        "Name"
-      ]
-    },
-    {
-      "cells": [
-        "Description"
-      ]
-    },
-    {
-      "cells": [
-        "Amount"
-      ]
-    }
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "IncomeSteps.iVerifyTheFollowingInputFieldsAreDisplayed(String\u003e)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "I verify the fields from dropdown \"Type\"",
-  "rows": [
-    {
-      "cells": [
-        "Type"
-      ]
-    },
-    {
-      "cells": [
-        "Salary"
-      ]
-    },
-    {
-      "cells": [
-        "Rental"
-      ]
-    }
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "IncomeSteps.iVerifyTheFieldsFromDropdown(String,String\u003e)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "I verify the fields from dropdown \"Frequency\"",
-  "rows": [
-    {
-      "cells": [
-        "Frequency"
-      ]
-    },
-    {
-      "cells": [
-        "Daily"
-      ]
-    },
-    {
-      "cells": [
-        "Weekly"
-      ]
-    },
-    {
-      "cells": [
-        "Bi-weekly"
-      ]
-    },
-    {
-      "cells": [
-        "Monthly"
-      ]
-    },
-    {
-      "cells": [
-        "Bi-monthly"
-      ]
-    },
-    {
-      "cells": [
-        "Quarterly"
-      ]
-    },
-    {
-      "cells": [
-        "Annually"
-      ]
-    }
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "IncomeSteps.iVerifyTheFieldsFromDropdown(String,String\u003e)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.uri("file:src/test/resources/features/mainPage(PLAN-1).feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/mainPage(PLAN-1).feature");
 formatter.feature({
   "name": "Landing Page test",
   "description": "",
@@ -163,9 +19,9 @@ formatter.step({
 formatter.match({
   "location": "MainPageSteps.iNavigateToProjectWebsite()"
 });
+formatter.write("2021-04-18 14:50:35 PASS: Successfully navigated to the url");
 formatter.result({
-  "error_message": "java.lang.NullPointerException\n\tat utils.CucumberLogUtils.logPass(CucumberLogUtils.java:21)\n\tat implementation.MainPageImplementation.navigateToPage(MainPageImplementation.java:25)\n\tat steps.MainPageSteps.iNavigateToProjectWebsite(MainPageSteps.java:12)\n\tat ✽.I navigate to Project website(file:src/test/resources/features/mainPage(PLAN-1).feature:4)\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
   "name": "I should see the \"PlanIT\" page",
@@ -174,8 +30,10 @@ formatter.step({
 formatter.match({
   "location": "MainPageSteps.iShouldSeeThePage(String)"
 });
+formatter.write("2021-04-18 14:50:35 PASS: PlanIT page is displayed");
+formatter.embedding("image/png", "embedded0.png", null);
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "I verify the following dashboards are displayed:",
@@ -211,8 +69,15 @@ formatter.step({
 formatter.match({
   "location": "MainPageSteps.iVerifyTheFollowingDashboardsAreDisplayed(String\u003e)"
 });
+formatter.write("2021-04-18 14:50:36 PASS: summary dashboard is displayed as expected");
+formatter.write("2021-04-18 14:50:36 PASS: income dashboard is displayed as expected");
+formatter.write("2021-04-18 14:50:36 PASS: expense dashboard is displayed as expected");
+formatter.write("2021-04-18 14:50:36 PASS: forecast dashboard is displayed as expected");
+formatter.write("2021-04-18 14:50:36 PASS: settings dashboard is displayed as expected");
+formatter.write("2021-04-18 14:50:36 PASS: All the dashboards are displayed as expected: [summary, income, expense, forecast, settings]");
+formatter.embedding("image/png", "embedded1.png", null);
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.after({
   "status": "passed"

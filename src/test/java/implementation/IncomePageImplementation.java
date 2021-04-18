@@ -3,9 +3,7 @@ package implementation;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import utils.MiscUtils;
-import utils.WebDriverUtils;
-import utils.СucumberLogUtils;
+import utils.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +20,7 @@ public class IncomePageImplementation {
     public void verifyInputFields(List<String> inputField) {
 
         for (String each : inputField) {
-            WebElement element = WebDriverUtils.getDriver().findElement(By.xpath("//input[@placeholder=\"" + each + "\"]"));
+            WebElement element = WebDriverUtils.getDriver().findElement(By.xpath("//input[@placeholder=" + each + "]"));
 
             if (element.isDisplayed()) {
                 СucumberLogUtils.logPass(each + " input field is displayed as expected", false);
