@@ -18,7 +18,7 @@ public class MainPageImplementation {
         return mainPage;
     }
 
-    public void navigateToPage() {
+    public void navigateToMainPage() {
         String url = ConfigReaderUtils.getProperty("url");
         WebDriverUtils.getDriver().get(url);
 
