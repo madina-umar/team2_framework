@@ -27,13 +27,8 @@ public class MainPageImplementation {
 
     public void validateCurrentPage(String pageName) {
         boolean pageIsDisplayed = false;
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
-        pageIsDisplayed = WebDriverUtils.getDriver().getTitle().equals("PlanIT");
+        pageIsDisplayed = WebDriverUtils.getDriver().getTitle().equals(pageName);
 
         if(pageIsDisplayed) {
            CucumberLogUtils.logPass(pageName + " page is displayed", true);

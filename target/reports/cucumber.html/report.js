@@ -19,7 +19,7 @@ formatter.step({
 formatter.match({
   "location": "MainPageSteps.iNavigateToProjectWebsite()"
 });
-formatter.write("2021-04-17 10:38:23 PASS: Successfully navigated to the url");
+formatter.write("2021-04-17 10:53:34 PASS: Successfully navigated to the url");
 formatter.result({
   "status": "passed"
 });
@@ -30,7 +30,7 @@ formatter.step({
 formatter.match({
   "location": "MainPageSteps.iShouldSeeThePage(String)"
 });
-formatter.write("2021-04-17 10:38:23 PASS: PlanIT page is displayed");
+formatter.write("2021-04-17 10:53:34 PASS: PlanIT page is displayed");
 formatter.embedding("image/png", "embedded0.png", null);
 formatter.result({
   "status": "passed"
@@ -69,12 +69,12 @@ formatter.step({
 formatter.match({
   "location": "MainPageSteps.iVerifyTheFollowingDashboardsAreDisplayed(String\u003e)"
 });
-formatter.write("2021-04-17 10:38:24 PASS: summary dashboard is displayed as expected");
-formatter.write("2021-04-17 10:38:24 PASS: income dashboard is displayed as expected");
-formatter.write("2021-04-17 10:38:24 PASS: expense dashboard is displayed as expected");
-formatter.write("2021-04-17 10:38:24 PASS: forecast dashboard is displayed as expected");
-formatter.write("2021-04-17 10:38:24 PASS: settings dashboard is displayed as expected");
-formatter.write("2021-04-17 10:38:24 PASS: All the dashboards are displayed as expected: [summary, income, expense, forecast, settings]");
+formatter.write("2021-04-17 10:53:35 PASS: summary dashboard is displayed as expected");
+formatter.write("2021-04-17 10:53:35 PASS: income dashboard is displayed as expected");
+formatter.write("2021-04-17 10:53:35 PASS: expense dashboard is displayed as expected");
+formatter.write("2021-04-17 10:53:35 PASS: forecast dashboard is displayed as expected");
+formatter.write("2021-04-17 10:53:35 PASS: settings dashboard is displayed as expected");
+formatter.write("2021-04-17 10:53:35 PASS: All the dashboards are displayed as expected: [summary, income, expense, forecast, settings]");
 formatter.embedding("image/png", "embedded1.png", null);
 formatter.result({
   "status": "passed"
