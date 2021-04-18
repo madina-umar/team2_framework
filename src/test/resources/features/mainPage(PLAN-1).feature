@@ -4,9 +4,8 @@ Feature: Landing Page test
     Given I navigate to Project website
     Then I should see the "PlanIT" page
     Then I verify the following dashboards are displayed:
-    | summary      |
-    | income       |
-    | expense      |
-    | forecast     |
-    | settings     |
-
+      | summary      |
+      | income       |
+      | expense      |
+      | forecast     |
+      | settings     |

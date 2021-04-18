@@ -4,13 +4,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import utils.WebDriverUtils;
 
 public class MainPage {
 
     public MainPage(WebDriver driver) {
-        PageFactory.initElements(WebDriverUtils.getDriver(), this);
+        PageFactory.initElements(driver, this);
     }
+
     public WebElement summaryButton;
 
     @FindBy(id = "income")
@@ -24,5 +26,6 @@ public class MainPage {
 
     @FindBy(id = "settings")
     public WebElement settingsButton;
+
 
 }
