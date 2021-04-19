@@ -13,7 +13,6 @@ public class Hooks {
 
     @Before
     public void setUp(Scenario currentScenario) {
-        СucumberLogUtils.initScenario(currentScenario);
         WebDriverUtils.getDriver().get(ConfigReaderUtils.getProperty("url"));
         СucumberLogUtils.initScenario(currentScenario);
     }
