@@ -13,8 +13,6 @@ public class MainPage {
         PageFactory.initElements(driver, this);
     }
 
-    public WebElement summaryButton;
-
     @FindBy(id = "income")
     public WebElement incomeButton;
 
@@ -26,6 +24,5 @@ public class MainPage {
 
     @FindBy(id = "settings")
     public WebElement settingsButton;
-
 
 }

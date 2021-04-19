@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-04-18T21:25:12.729Z",
+        "start_timestamp": "2021-04-19T22:57:50.208Z",
         "before": [
           {
             "result": {
-              "duration": 833762,
+              "duration": 1440877,
               "status": "passed"
             },
             "match": {
@@ -22,7 +22,7 @@
         "after": [
           {
             "result": {
-              "duration": 91138157,
+              "duration": 108118847,
               "status": "passed"
             },
             "match": {
@@ -35,10 +35,10 @@
         "steps": [
           {
             "output": [
-              "2021-04-18 17:25:16 PASS: Successfully navigated to the url"
+              "2021-04-19 18:57:55 PASS: Successfully navigated to the url"
             ],
             "result": {
-              "duration": 3271399292,
+              "duration": 4794450126,
               "status": "passed"
             },
             "line": 4,
@@ -50,7 +50,7 @@
           },
           {
             "output": [
-              "2021-04-18 17:25:16 PASS: PlanIT page is displayed"
+              "2021-04-19 18:57:55 PASS: PlanIT page is displayed"
             ],
             "embeddings": [
               {
@@ -59,7 +59,7 @@
               }
             ],
             "result": {
-              "duration": 516581844,
+              "duration": 612979744,
               "status": "passed"
             },
             "line": 5,
@@ -77,12 +77,12 @@
           },
           {
             "output": [
-              "2021-04-18 17:25:19 PASS: summary dashboard is displayed as expected",
-              "2021-04-18 17:25:19 PASS: income dashboard is displayed as expected",
-              "2021-04-18 17:25:19 PASS: expense dashboard is displayed as expected",
-              "2021-04-18 17:25:19 PASS: forecast dashboard is displayed as expected",
-              "2021-04-18 17:25:19 PASS: settings dashboard is displayed as expected",
-              "2021-04-18 17:25:19 PASS: All the dashboards are displayed as expected: [summary, income, expense, forecast, settings]"
+              "2021-04-19 18:57:58 PASS: summary dashboard is displayed as expected",
+              "2021-04-19 18:57:58 PASS: income dashboard is displayed as expected",
+              "2021-04-19 18:57:58 PASS: expense dashboard is displayed as expected",
+              "2021-04-19 18:57:58 PASS: forecast dashboard is displayed as expected",
+              "2021-04-19 18:57:58 PASS: settings dashboard is displayed as expected",
+              "2021-04-19 18:57:58 PASS: All the dashboards are displayed as expected: [summary, income, expense, forecast, settings]"
             ],
             "embeddings": [
               {
@@ -91,7 +91,7 @@
               }
             ],
             "result": {
-              "duration": 3297102418,
+              "duration": 3439375480,
               "status": "passed"
             },
             "line": 6,

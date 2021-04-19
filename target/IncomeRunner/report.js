@@ -19,7 +19,7 @@ formatter.step({
 formatter.match({
   "location": "MainPageSteps.iNavigateToProjectWebsite()"
 });
-formatter.write("2021-04-18 14:53:24 PASS: Successfully navigated to the url");
+formatter.write("2021-04-19 18:59:04 PASS: Successfully navigated to the url");
 formatter.result({
   "status": "passed"
 });
