@@ -20,7 +20,12 @@ public class IncomeSteps {
     }
 
     @Then("I verify the fields from dropdown {string}")
-    public void iVerifyTheFieldsFromDropdown(String dropDownName, List<String> dropDown ) {
+    public void iVerifyTheFieldsFromDropdown(String dropDownName, List<String> dropDown) {
         impl.verifyFieldsDropDown(dropDown, dropDownName);
+    }
+
+    @Then("I verify the following columns are displayed:")
+    public void iVerifyTheFollowingColumnsAreDisplayed(List<String> columns) {
+        impl.verifyColumnsName(columns);
     }
 }
