@@ -8,17 +8,17 @@ import utils.ConfigReaderUtils;
 import utils.WebDriverUtils;
 import utils.СucumberLogUtils;
 
-
 public class Hooks {
 
     @Before
     public void setUp(Scenario currentScenario) {
-        WebDriverUtils.getDriver().get(ConfigReaderUtils.getProperty("url"));
+        System.out.println("=========== Setting Up ===========");
         СucumberLogUtils.initScenario(currentScenario);
     }
 
     @After
     public void tearDown() {
+        System.out.println("=========== tearing down ===========");
         WebDriverUtils.closeDriver();
     }
 }

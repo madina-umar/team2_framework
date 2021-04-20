@@ -8,11 +8,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-
-        plugin = {"pretty", "html:target/cucumber.html", "rerun:target/Rerun_Failed/SettingsRunner.txt", "json:target/cucumber.json"},
-        features = {"src/test/resources/features"},
+        plugin = {"pretty", "html:target/SettingsRunner-sanity", "rerun:target/Rerun_Failed/SettingsRunner.txt", "json:target/cucumber.json"},
+        features = {"src/test/resources/features/settings.feature"},
         glue = {"steps", "hooks"},
-        dryRun = true
+        dryRun = false,
+        //tags ="@plan-8"
+        //tags = "@plan-9"
+        tags = "@sanity"
 
 
 )

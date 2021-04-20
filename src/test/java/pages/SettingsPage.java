@@ -1,4 +1,5 @@
 package pages;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,20 +10,19 @@ import java.util.List;
 
 
 public class SettingsPage extends SettingsPageSteps {
-    public SettingsPage() {
-        PageFactory.initElements(WebDriverUtils.getDriver(), this);
+//    public SettingsPage() {
+    //    PageFactory.initElements(WebDriverUtils.getDriver(), this);
 
-    }
-    @FindBy(xpath = "//div[@class='input-group']")
-    public List <WebElement>  inputFields;
+   // }
+   public SettingsPage(WebDriver driver) {
+       PageFactory.initElements(driver, this);
+   }
+
+   // @FindBy(xpath = "//div[@class='input-group']")
+   // public List<WebElement> inputFields;
 
     @FindBy(xpath = "//button[@class='btn btn-outline-secondary']")
-    public List <WebElement>  enterButtons;
-
-
-
-
-
+    public List<WebElement> enterButtons;
 
 
 }

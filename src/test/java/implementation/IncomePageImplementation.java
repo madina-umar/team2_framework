@@ -33,19 +33,24 @@ public class IncomePageImplementation {
     }
 
     public void verifyFieldsDropDown(List<String> dropDown, String dropDownName) {
+
         WebElement element = WebDriverUtils.getDriver().findElement(By.id(dropDownName.toLowerCase()));
+
         Select select = new Select(element);
+
         List<WebElement> list = select.getOptions();
+
         List<String> listWeb = new ArrayList<>();
+
         list.forEach(a -> listWeb.add(a.getText()));
 
+        MiscUtils.highlightElement(element).click();
+        MiscUtils.sleep(5000);
         if (dropDown.equals(listWeb)) {
-            MiscUtils.highlightElement(element).click();
-            MiscUtils.sleep(1000);
-            СucumberLogUtils.logPass("All drop-down fields "+ listWeb +" are displayed as expected", false);
 
+            СucumberLogUtils.logPass("All drop-down fields are displayed as expected", true);
         } else {
-            СucumberLogUtils.logFail("Drop-down fields  " + listWeb + " are NOT displayed as expected", false);
+            СucumberLogUtils.logFail("Drop-down fields are NOT displayed as expected", true);
         }
     }
 }

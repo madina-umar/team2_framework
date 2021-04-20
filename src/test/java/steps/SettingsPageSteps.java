@@ -1,32 +1,51 @@
 package steps;
 
+import implementation.SettingsPageImpls;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+
 import pages.SettingsPage;
 
 public class SettingsPageSteps {
 
-    SettingsPage settingsPage = new SettingsPage();
+    SettingsPageImpls settingsPageImpls = new SettingsPageImpls();
 
     @Then("Adding {string} to Fixed income window")
-    public void adding_to_window(String data) {
-        settingsPage.inputFields.get(0).sendKeys(data);
+    public void adding_to_window(String data) {settingsPageImpls.adding_to_window(data);
+
 
 
     }
-
-    @Then("I am pressing Enter button")
-    public void iAmPressingEnterButton() {
-        settingsPage.enterButtons.get(0).click();
+    @Then("I am pressing {string} button")
+    public void iAmPressingButton(String enter) {settingsPageImpls.pressingEnter(enter);
     }
 
-    @Then("I am verifying {string} displayed in Fixed Income field")
-    public void i_am_verifying_displayed_in_field(String entry) {
-    //    ("//*[contains(text(), '"+entry+"')]")
 
 
 
 
+
+        //     ("//*[contains(text(), '"+entry+"')]")
+
+
+    @Then("I am verifying {string} displayed in Fixed Income  field")
+    public void iAmVerifyingDisplayedInFixedIncomeField(String entry) { settingsPageImpls.displayedType(entry);
+    }
+
+
+    @And("I am deleting {string} entry from the field")
+    public void iAmDeletingEntryFromTheField(String newEntry) { settingsPageImpls.deletingNewEntry(newEntry);
+    }
+
+    @Then("I am verifying {string} is not displayed in Fixed Income  field")
+    public void iAmVerifyingIsNotDisplayedInFixedIncomeField(String entry) { settingsPageImpls.isNotDisplayedType(entry);
+    }
+
+    @Then("Refreshing page")
+    public void refreshingPage() { settingsPageImpls.refreshingPage();
+    }
+
+    @And("Getting title of the page")
+    public void gettingTitleOfThePage() { settingsPageImpls.gettingTitle();
     }
 }
