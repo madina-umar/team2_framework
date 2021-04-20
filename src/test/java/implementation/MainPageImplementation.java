@@ -71,7 +71,7 @@ public class MainPageImplementation {
                 WebElement webElement = getPage().mainPageIncomeDollarValue.get(i);
                 if (webElement.isDisplayed()) {
                     MiscUtils.highlightElement(webElement);
-                    СucumberLogUtils.logPass(mainPageIncomeDollarValue.get(i) + " is displayed as expected", false);
+                    СucumberLogUtils.logPass(mainPageIncomeDollarValue.get(i) + " is displayed as expected and equals = " +webElement.getText(), false);
                 }
 
             } catch (Exception e) {
@@ -89,7 +89,7 @@ public class MainPageImplementation {
                 WebElement webElement = getPage().mainPageExpensDollarValue.get(i);
                 if (webElement.isDisplayed()) {
                     MiscUtils.highlightElement(webElement);
-                    СucumberLogUtils.logPass(mainPageExpenseDollarValue.get(i) + " is displayed as expected", false);
+                    СucumberLogUtils.logPass(mainPageExpenseDollarValue.get(i) + " is displayed as expected and equals =" + webElement.getText(), false);
                 }
             } catch (Exception e) {
                 СucumberLogUtils.logFail(mainPageExpenseDollarValue.get(i) + " is NOT displayed", false);
@@ -113,7 +113,7 @@ public class MainPageImplementation {
                     MiscUtils.highlightElement(revenueWebElement);
                     Assert.assertEquals(Double.parseDouble(revenue), Double.parseDouble(income) - Double.parseDouble(expense), 0.0);
 
-                    СucumberLogUtils.logPass(mainPageDollarValue.get(i) + " is displayed as expected and Income and Expense difference is checked", false);
+                    СucumberLogUtils.logPass(mainPageDollarValue.get(i) + " is displayed as expected and Income and Expense difference is checked and equals =" + revenue, false);
                 }
             } catch (Exception e) {
                 СucumberLogUtils.logFail(mainPageDollarValue.get(i) + " is NOT displayed", false);
