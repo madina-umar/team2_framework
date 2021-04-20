@@ -7,25 +7,22 @@ import org.openqa.selenium.support.PageFactory;
 
 import utils.WebDriverUtils;
 
+import java.util.List;
+
 public class MainPage {
 
     public MainPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    public WebElement summaryButton;
+    @FindBy(xpath = "//div//p[contains(text(),'Income')]//following-sibling::p")
+    public List<WebElement> mainPageIncomeDollarValue;
 
-    @FindBy(id = "income")
-    public WebElement incomeButton;
+    @FindBy(xpath = "//div//p[contains(text(),'Expense')]//following-sibling::p")
+    public List<WebElement> mainPageExpensDollarValue;
 
-    @FindBy(id = "expense")
-    public WebElement expenseButton;
-
-    @FindBy(id = "forecast")
-    public WebElement forecastButton;
-
-    @FindBy(id = "settings")
-    public WebElement settingsButton;
+    @FindBy(xpath = "//div//p[contains(text(),'Revenue')]//following-sibling::p")
+    public List<WebElement> mainPageRevenueDollarValue;
 
 
 }

@@ -62,4 +62,23 @@ public class MainPageImplementation {
         СucumberLogUtils.logPass("All the dashboards are displayed as expected: " + dashboardList, true);
 
     }
-}
+
+    public void verifyMainPageIncomeFields(List<String> mainPageIncomeDollarValue) {
+        for(int i = 0; i < mainPageIncomeDollarValue.size(); i ++) {
+            try {
+
+                WebElement webElement = getPage().mainPageIncomeDollarValue.get(i);
+                if (webElement.isDisplayed()) {
+                    MiscUtils.highlightElement(webElement);
+                    СucumberLogUtils.logPass(mainPageIncomeDollarValue.get(i) + " is displayed as expected", true);
+                }
+
+            } catch (Exception e) {
+                СucumberLogUtils.logFail(mainPageIncomeDollarValue.get(i) + " is NOT displayed", false);
+            }
+
+        }
+        СucumberLogUtils.logPass("All the income values are displayed as expected: " + mainPageIncomeDollarValue, true);
+
+    }
+        }

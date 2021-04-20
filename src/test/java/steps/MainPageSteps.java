@@ -2,6 +2,7 @@ package steps;
 import implementation.MainPageImplementation;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.WebElement;
 
 import java.util.List;
 public class MainPageSteps {
@@ -20,5 +21,10 @@ public class MainPageSteps {
     @Then("I verify the following dashboards are displayed:")
     public void iVerifyTheFollowingDashboardsAreDisplayed(List<String> dashboardButtons) {
         mainPageImplementation.verifyDashboards(dashboardButtons);
+    }
+
+    @Then("I verify the following mainPage income fields are displayed:")
+    public void iVerifyTheFollowingMainPageIncomeFieldsAreDisplayed(List<String> mainPageDollarValue) {
+        mainPageImplementation.verifyMainPageIncomeFields(mainPageDollarValue);
     }
 }
