@@ -32,4 +32,9 @@ public class MainPageSteps {
     public void iVerifyTheFollowingMainPageExpenseFieldsAreDisplayed(List<String> mainPageDollarValue) {
         mainPageImplementation.verifyMainPageExpenseFields(mainPageDollarValue);
     }
+
+    @Then("I verify the following mainPage revenue fields are displayed:")
+    public void iVerifyTheFollowingMainPageRevenueFieldsAreDisplayed(List<String> mainPageDollarValue) {
+        mainPageImplementation.verifyMainPageRevenueFields(mainPageDollarValue);
+    }
 }

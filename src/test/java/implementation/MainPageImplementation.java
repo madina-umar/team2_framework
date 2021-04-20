@@ -1,5 +1,6 @@
 package implementation;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.MainPage;
@@ -64,7 +65,7 @@ public class MainPageImplementation {
     }
 
     public void verifyMainPageIncomeFields(List<String> mainPageIncomeDollarValue) {
-        for(int i = 0; i < mainPageIncomeDollarValue.size(); i ++) {
+        for (int i = 0; i < mainPageIncomeDollarValue.size(); i++) {
             try {
 
                 WebElement webElement = getPage().mainPageIncomeDollarValue.get(i);
@@ -83,20 +84,42 @@ public class MainPageImplementation {
     }
 
     public void verifyMainPageExpenseFields(List<String> mainPageExpenseDollarValue) {
-        for(int i = 0; i < mainPageExpenseDollarValue.size(); i ++) {
+        for (int i = 0; i < mainPageExpenseDollarValue.size(); i++) {
             try {
                 WebElement webElement = getPage().mainPageExpensDollarValue.get(i);
                 if (webElement.isDisplayed()) {
                     MiscUtils.highlightElement(webElement);
                     СucumberLogUtils.logPass(mainPageExpenseDollarValue.get(i) + " is displayed as expected", false);
                 }
-
             } catch (Exception e) {
                 СucumberLogUtils.logFail(mainPageExpenseDollarValue.get(i) + " is NOT displayed", false);
             }
-
         }
-        СucumberLogUtils.logPass("All the income values are displayed as expected: " + mainPageExpenseDollarValue, true);
+        СucumberLogUtils.logPass("All the expense values are displayed as expected: " + mainPageExpenseDollarValue, true);
+    }
+
+    public void verifyMainPageRevenueFields(List<String> mainPageDollarValue) {
+        for (int i = 0; i < mainPageDollarValue.size(); i++) {
+            try {
+                WebElement revenueWebElement = getPage().mainPageRevenueDollarValue.get(i);
+                WebElement expenseElement = getPage().mainPageExpensDollarValue.get(i);
+                WebElement incomeWebElement = getPage().mainPageIncomeDollarValue.get(i);
+
+                String revenue = revenueWebElement.getText().substring(1);
+                String expense = expenseElement.getText().substring(1);
+                String income = incomeWebElement.getText().substring(1);
+
+                if (revenueWebElement.isDisplayed()) {
+                    MiscUtils.highlightElement(revenueWebElement);
+                    Assert.assertEquals(Double.parseDouble(revenue), Double.parseDouble(income) - Double.parseDouble(expense), 0.0);
+
+                    СucumberLogUtils.logPass(mainPageDollarValue.get(i) + " is displayed as expected and Income and Expense difference is checked", false);
+                }
+            } catch (Exception e) {
+                СucumberLogUtils.logFail(mainPageDollarValue.get(i) + " is NOT displayed", false);
+            }
+        }
+        СucumberLogUtils.logPass("All the revenue values are displayed as expected: " + mainPageDollarValue, true);
 
     }
-    }
+}
