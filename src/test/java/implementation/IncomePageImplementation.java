@@ -46,11 +46,29 @@ public class IncomePageImplementation {
 
         MiscUtils.highlightElement(element).click();
         MiscUtils.sleep(2000);
-        if (dropDown.equals(listWeb)) {
-
-            СucumberLogUtils.logPass("All drop-down fields are displayed as expected", true);
-        } else {
-            СucumberLogUtils.logFail("Drop-down fields are NOT displayed as expected", true);
+        for (String each : dropDown) {
+            if (listWeb.contains(each)) {
+                СucumberLogUtils.logPass(each + " drop-down field are displayed as expected", false);
+            } else {
+                СucumberLogUtils.logFail(each + " drop-down field are NOT displayed as expected", false);
+            }
         }
+    }
+
+    public void verifyColumnsName(List<String> columns) {
+        List<WebElement> columnList = WebDriverUtils.getDriver().findElements(By.xpath("//tr/th"));
+        List<String> stringList = new ArrayList<>();
+
+        for (int i = 0; i < columnList.size() - 1; i++) {
+            stringList.add(columnList.get(i).getText());
+        }
+        for (String each : columns) {
+            if (columns.equals(stringList)) {
+                СucumberLogUtils.logPass("Columns name " + each + " are displayed as expected", false);
+            } else {
+                СucumberLogUtils.logFail("Columns name  " + each + " are NOT displayed as expected", false);
+            }
+        }
+
     }
 }

@@ -33,7 +33,7 @@ public class MainPageImplementation {
             e.printStackTrace();
         }
 
-        pageIsDisplayed = WebDriverUtils.getDriver().getTitle().equals("PlanIT");
+        pageIsDisplayed = WebDriverUtils.getDriver().getTitle().equals(pageName);
 
         if (pageIsDisplayed) {
             СucumberLogUtils.logPass(pageName + " page is displayed", true);

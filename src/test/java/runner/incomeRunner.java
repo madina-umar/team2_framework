@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         glue = {"steps", "hooks"}
         //, stepNotifications = true
         , dryRun = false
-//        , tags = "@test3"
+        , tags = "@PLAN-2"
 
 )
 
