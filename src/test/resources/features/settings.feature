@@ -140,4 +140,7 @@ Feature:
     Then Adding "Gas" to Fixed Cost to window
     Then Pressing "Cost Enter" button
     Then I click "Expense" link
-    Then Verifying "Gas" displayed in dropdown "Type"
+    Then I verify the fields from dropdown "Type"
+      | Gas  |
+    Then I click "Settings" link
+    And I am deleting "Gas" entry from the field

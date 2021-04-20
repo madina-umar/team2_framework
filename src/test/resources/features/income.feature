@@ -34,3 +34,15 @@ Feature: Income page
       | Amount      |
       | Income Type |
       | Date        |
+
+  @PLAN-2
+  Scenario: PLAN-2 Income page - Data table
+    Given I navigate to Project website
+    Then I click "Income" link
+    Then I should see the "PlanIT - Income" page
+    Then I verify the following columns are displayed:
+      | Name        |
+      | Description |
+      | Amount      |
+      | Income Type |
+      | Date        |
