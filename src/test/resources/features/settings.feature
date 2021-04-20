@@ -133,3 +133,11 @@ Feature:
     And I am deleting "Hello and welcome to 'Planet Money' podcast." entry from the field
 
 
+# P-10
+  @regression @positive @sprint1 @plan-10
+    Scenario:Adding and verifying  Fixed cost is displayed in as a option for new entry on Expense page
+    Then I click "Settings" link
+    Then Adding "Gas" to Fixed Cost to window
+    Then Pressing "Cost Enter" button
+    Then I click "Expense" link
+    Then Verifying "Gas" displayed in dropdown "Type"

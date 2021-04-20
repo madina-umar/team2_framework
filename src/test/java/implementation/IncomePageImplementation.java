@@ -45,7 +45,7 @@ public class IncomePageImplementation {
         list.forEach(a -> listWeb.add(a.getText()));
 
         MiscUtils.highlightElement(element).click();
-        MiscUtils.sleep(5000);
+        MiscUtils.sleep(2000);
         if (dropDown.equals(listWeb)) {
 
             СucumberLogUtils.logPass("All drop-down fields are displayed as expected", true);
