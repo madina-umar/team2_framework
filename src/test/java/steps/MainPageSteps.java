@@ -27,4 +27,9 @@ public class MainPageSteps {
     public void iVerifyTheFollowingMainPageIncomeFieldsAreDisplayed(List<String> mainPageDollarValue) {
         mainPageImplementation.verifyMainPageIncomeFields(mainPageDollarValue);
     }
+
+    @Then("I verify the following mainPage expense fields are displayed:")
+    public void iVerifyTheFollowingMainPageExpenseFieldsAreDisplayed(List<String> mainPageDollarValue) {
+        mainPageImplementation.verifyMainPageExpenseFields(mainPageDollarValue);
+    }
 }

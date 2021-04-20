@@ -70,7 +70,7 @@ public class MainPageImplementation {
                 WebElement webElement = getPage().mainPageIncomeDollarValue.get(i);
                 if (webElement.isDisplayed()) {
                     MiscUtils.highlightElement(webElement);
-                    СucumberLogUtils.logPass(mainPageIncomeDollarValue.get(i) + " is displayed as expected", true);
+                    СucumberLogUtils.logPass(mainPageIncomeDollarValue.get(i) + " is displayed as expected", false);
                 }
 
             } catch (Exception e) {
@@ -81,4 +81,22 @@ public class MainPageImplementation {
         СucumberLogUtils.logPass("All the income values are displayed as expected: " + mainPageIncomeDollarValue, true);
 
     }
+
+    public void verifyMainPageExpenseFields(List<String> mainPageExpenseDollarValue) {
+        for(int i = 0; i < mainPageExpenseDollarValue.size(); i ++) {
+            try {
+                WebElement webElement = getPage().mainPageExpensDollarValue.get(i);
+                if (webElement.isDisplayed()) {
+                    MiscUtils.highlightElement(webElement);
+                    СucumberLogUtils.logPass(mainPageExpenseDollarValue.get(i) + " is displayed as expected", false);
+                }
+
+            } catch (Exception e) {
+                СucumberLogUtils.logFail(mainPageExpenseDollarValue.get(i) + " is NOT displayed", false);
+            }
+
         }
+        СucumberLogUtils.logPass("All the income values are displayed as expected: " + mainPageExpenseDollarValue, true);
+
+    }
+    }
