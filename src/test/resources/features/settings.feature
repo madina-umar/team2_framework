@@ -4,10 +4,10 @@ Feature:
     Given I navigate to Project website
     Then I click "Settings" link
 
-    @sanity
-      Scenario:
-      Then Refreshing page
-      And Getting title of the page
+  @sanity
+  Scenario:
+    Then Refreshing page
+    And Getting title of the page
 
 
   @regression @positive @sprint1 @plan-8 @sanity
@@ -34,7 +34,7 @@ Feature:
   Scenario:Adding spaces to Fixed Income types
     And Adding "    " to Fixed income window
     Then I am pressing "Enter" button
-    Then I am verifying "   " is not displayed in Fixed Income  field
+    Then I am verifying "   " is not displayed
 
 
   @negative @sprint1 @plan-8
@@ -111,10 +111,10 @@ Feature:
     Then I am verifying "093875 -- ! @` ke" displayed in Fixed Income  field
     Then I click "Income" link
     Then I verify the fields from dropdown "Type"
-      | Type               |
-      | Salary             |
-      | Rental             |
-      |093875 -- ! @` ke|
+      | Type              |
+      | Salary            |
+      | Rental            |
+      | 093875 -- ! @` ke |
     Then I click "Settings" link
     And I am deleting "093875 -- ! @` ke" entry from the field
 
@@ -135,12 +135,76 @@ Feature:
 
 # P-10
   @regression @positive @sprint1 @plan-10
-    Scenario:Adding and verifying  Fixed cost is displayed in as a option for new entry on Expense page
+  Scenario:Adding and verifying  Fixed cost is displayed in as a option for new entry on Expense page
     Then I click "Settings" link
     Then Adding "Gas" to Fixed Cost to window
     Then Pressing "Cost Enter" button
     Then I click "Expense" link
     Then I verify the fields from dropdown "Type"
-      | Gas  |
+      | Gas |
     Then I click "Settings" link
     And I am deleting "Gas" entry from the field
+
+  @regression @positive @sprint1 @plan-10
+  Scenario:Adding and verifying  Fixed cost is displayed in as a option for new entry on Expense page
+    Then I click "Settings" link
+    Then Adding "Car service" to Fixed Cost to window
+    Then Pressing "Cost Enter" button
+    Then I click "Expense" link
+    Then I verify the fields from dropdown "Type"
+      | Car service |
+    Then I click "Settings" link
+    And I am deleting "Car service" entry from the field
+
+  @regression @positive @sprint1 @plan-10
+  Scenario:Adding and verifying  Fixed cost is displayed in as a option for new entry on Expense page
+    Then I click "Settings" link
+    Then Adding "Online subscriptions(AWS,QB,Music!)" to Fixed Cost to window
+    Then Pressing "Cost Enter" button
+    Then I click "Expense" link
+    Then I verify the fields from dropdown "Type"
+      | Online subscriptions(AWS,QB,Music!) |
+    Then I click "Settings" link
+    And I am deleting "Online subscriptions(AWS,QB,Music!)" entry from the field
+
+
+   @negative @sprint1 @plan-10
+  Scenario:Adding and verifying  Fixed cost is displayed in as a option for new entry on Expense page
+    Then I click "Settings" link
+    Then Adding "??~ //@123445567788900-=Online subscriptions(AWS,QB,Music!)" to Fixed Cost to window
+    Then Pressing "Cost Enter" button
+    Then I click "Expense" link
+    Then I verify the fields from dropdown "Type"
+      | ??~ //@123445567788900-=Online subscriptions(AWS,QB,Music!) |
+    Then I click "Settings" link
+    And I am deleting "??~ //@123445567788900-=Online subscriptions(AWS,QB,Music!)" entry from the field
+
+  @negative @sprint1 @plan-10
+  Scenario:Adding and verifying  Fixed cost is displayed in as a option for new entry on Expense page
+    Then I click "Settings" link
+    Then Adding "Hello@yahoo.com" to Fixed Cost to window
+    Then Pressing "Cost Enter" button
+    Then I click "Expense" link
+    Then I verify the fields from dropdown "Type"
+      | Hello@yahoo.com |
+    Then I click "Settings" link
+    And I am deleting "Hello@yahoo.com" entry from the field
+
+  @negative @sprint1 @plan-10
+  Scenario:Adding and verifying  Fixed cost is displayed in as a option for new entry on Expense page
+    Then I click "Settings" link
+    Then Adding "      " to Fixed Cost to window
+    Then Pressing "Cost Enter" button
+    Then I click "Expense" link
+    Then I am verifying "   " is not displayed
+
+  @negative @sprint1 @plan-10
+  Scenario:Adding and verifying  Fixed cost is displayed in as a option for new entry on Expense page
+    Then I click "Settings" link
+    Then Adding "//@@++!{})(><?$#^*@)#^%^!()#_)#))_(!@$*!@&$^!!$^)_+!@" to Fixed Cost to window
+    Then Pressing "Cost Enter" button
+    Then I click "Expense" link
+    Then I verify the fields from dropdown "Type"
+      | //@@++!{})(><?$#^*@)#^%^!()#_)#))_(!@$*!@&$^!!$^)_+!@ |
+    Then I click "Settings" link
+    And I am deleting "//@@++!{})(><?$#^*@)#^%^!()#_)#))_(!@$*!@&$^!!$^)_+!@" entry from the field

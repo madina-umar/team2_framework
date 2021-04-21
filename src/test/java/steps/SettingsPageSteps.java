@@ -37,8 +37,8 @@ public class SettingsPageSteps {
         settingsPageImpls.deletingNewEntry(newEntry);
     }
 
-    @Then("I am verifying {string} is not displayed in Fixed Income  field")
-    public void iAmVerifyingIsNotDisplayedInFixedIncomeField(String entry) {
+    @Then("I am verifying {string} is not displayed")
+    public void iAmVerifyingIsNotDisplayed(String entry) {
         settingsPageImpls.isNotDisplayedType(entry);
     }
 

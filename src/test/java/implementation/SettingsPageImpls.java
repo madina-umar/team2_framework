@@ -75,14 +75,37 @@ public class SettingsPageImpls {
         element.click();
         MiscUtils.sleep(500);
 
+
         try {
 
-            WebElement element1 = WebDriverUtils.getDriver().findElement(By.xpath("//*[contains(text(),\"" + newEntry + "\")]"));
+            WebElement element1 = WebDriverUtils.getDriver().findElement(By.xpath("//*[contains(text(),\"" + newEntry + "\")]/button[@class='delete']"));
+
+                        element1.click();
+                        element1 = WebDriverUtils.getDriver().findElement(By.xpath("//*[contains(text(),\"" + newEntry + "\")]/button[@class='delete']"));
+            MiscUtils.sleep(500);
+            element1.click();
+            MiscUtils.sleep(500);
+            element1 = WebDriverUtils.getDriver().findElement(By.xpath("//*[contains(text(),\"" + newEntry + "\")]/button[@class='delete']"));
+            element1.click();
+            MiscUtils.sleep(500);
+            element1 = WebDriverUtils.getDriver().findElement(By.xpath("//*[contains(text(),\"" + newEntry + "\")]/button[@class='delete']"));
+            element1.click();
+            MiscUtils.sleep(500);
+            element1 = WebDriverUtils.getDriver().findElement(By.xpath("//*[contains(text(),\"" + newEntry + "\")]/button[@class='delete']"));
+            element1.click();
+
+//            WebElement element0 = WebDriverUtils.getDriver().findElement(By.xpath("//*[contains(text(),\"" + newEntry + "\")]/button[@class='delete']"));
+//            element0.click();
+//            MiscUtils.sleep(500);
+//            WebElement element2 = WebDriverUtils.getDriver().findElement(By.xpath("//*[contains(text(),\"" + newEntry + "\")]/button[@class='delete']"));
+//            element2.click();
+//            MiscUtils.sleep(500);
             СucumberLogUtils.logFail(newEntry + " was Not deleted", true);
-        } catch (NoSuchElementException e) {
-            СucumberLogUtils.logPass(newEntry + " was successfully deleted", true);
+            } catch(NoSuchElementException e){
+                СucumberLogUtils.logPass(newEntry + " was successfully deleted", true);
+            }
         }
-    }
+
 
     //   Negative
 
@@ -96,7 +119,6 @@ public class SettingsPageImpls {
         } catch (NoSuchElementException e) {
             СucumberLogUtils.logPass(entry + " new fixed income is Not displayed", true);
         }
-
     }
 
     public void refreshingPage() {
