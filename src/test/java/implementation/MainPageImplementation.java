@@ -71,7 +71,7 @@ public class MainPageImplementation {
                 WebElement webElement = getPage().mainPageIncomeDollarValue.get(i);
                 if (webElement.isDisplayed()) {
                     MiscUtils.highlightElement(webElement);
-                    СucumberLogUtils.logPass(mainPageIncomeDollarValue.get(i) + " is displayed as expected and equals = " +webElement.getText(), false);
+                    СucumberLogUtils.logPass(mainPageIncomeDollarValue.get(i) + " is displayed as expected and equals = " + webElement.getText(), false);
                 }
 
             } catch (Exception e) {
@@ -89,7 +89,7 @@ public class MainPageImplementation {
                 WebElement webElement = getPage().mainPageExpensDollarValue.get(i);
                 if (webElement.isDisplayed()) {
                     MiscUtils.highlightElement(webElement);
-                    СucumberLogUtils.logPass(mainPageExpenseDollarValue.get(i) + " is displayed as expected and equals =" + webElement.getText(), false);
+                    СucumberLogUtils.logPass(mainPageExpenseDollarValue.get(i) + " is displayed as expected and equals = " + webElement.getText(), false);
                 }
             } catch (Exception e) {
                 СucumberLogUtils.logFail(mainPageExpenseDollarValue.get(i) + " is NOT displayed", false);
@@ -110,10 +110,17 @@ public class MainPageImplementation {
                 String income = incomeWebElement.getText().substring(1);
 
                 if (revenueWebElement.isDisplayed()) {
-                    MiscUtils.highlightElement(revenueWebElement);
+                 //   MiscUtils.highlightElement(revenueWebElement);
                     Assert.assertEquals(Double.parseDouble(revenue), Double.parseDouble(income) - Double.parseDouble(expense), 0.0);
+                    if(revenue.charAt(0) == '-') {
+                       Assert.assertEquals(revenueWebElement.getCssValue("color"),"rgba(239, 97, 97, 1)");
+                        СucumberLogUtils.logPass(revenue + " element color printed as expected",false);
+                    } else {
+                        Assert.assertEquals(revenueWebElement.getCssValue("color"),"rgba(54, 54, 54, 1)");
+                        СucumberLogUtils.logPass(revenue + " element color printed as expected",false);
+                    }
 
-                    СucumberLogUtils.logPass(mainPageDollarValue.get(i) + " is displayed as expected and Income and Expense difference is checked and equals =" + revenue, false);
+                    СucumberLogUtils.logPass(mainPageDollarValue.get(i) + " is displayed as expected and Income and Expense difference is checked and equals = " + revenue, false);
                 }
             } catch (Exception e) {
                 СucumberLogUtils.logFail(mainPageDollarValue.get(i) + " is NOT displayed", false);
