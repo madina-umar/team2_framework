@@ -1,29 +1,29 @@
 [
   {
-    "line": 1,
+    "line": 2,
     "elements": [
       {
-        "start_timestamp": "2021-04-16T05:26:05.098Z",
+        "start_timestamp": "2021-04-21T22:51:01.421Z",
         "before": [
           {
             "result": {
-              "duration": 329200,
-              "status": "skipped"
+              "duration": 2742078300,
+              "status": "passed"
             },
             "match": {
               "location": "Hooks.setUp(Scenario)"
             }
           }
         ],
-        "line": 2,
-        "name": "Main",
+        "line": 22,
+        "name": "Add an item to income and verify added item is displayed in main data table",
         "description": "",
-        "id": "main;main",
+        "id": "income-page---add-new-income-item;add-an-item-to-income-and-verify-added-item-is-displayed-in-main-data-table;;2",
         "after": [
           {
             "result": {
-              "duration": 8800,
-              "status": "skipped"
+              "duration": 1403722100,
+              "status": "passed"
             },
             "match": {
               "location": "Hooks.tearDown()"
@@ -31,129 +31,268 @@
           }
         ],
         "type": "scenario",
-        "keyword": "Scenario",
+        "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 541700,
-              "status": "skipped"
+              "duration": 190742100,
+              "status": "passed"
             },
-            "line": 3,
-            "name": "Login in to main page",
-            "match": {
-              "location": "MainSteps.login_in_to_main_page()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      }
-    ],
-    "name": "Main",
-    "description": "",
-    "id": "main",
-    "keyword": "Feature",
-    "uri": "file:src/test/resources/features/main.feature",
-    "tags": []
-  },
-  {
-    "line": 1,
-    "elements": [
-      {
-        "start_timestamp": "2021-04-16T05:26:05.130Z",
-        "before": [
-          {
-            "result": {
-              "duration": 13100,
-              "status": "skipped"
-            },
-            "match": {
-              "location": "Hooks.setUp(Scenario)"
-            }
-          }
-        ],
-        "line": 3,
-        "name": "",
-        "description": "",
-        "id": ";",
-        "after": [
-          {
-            "result": {
-              "duration": 8900,
-              "status": "skipped"
-            },
-            "match": {
-              "location": "Hooks.tearDown()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 4,
-            "name": "I am navigating to \"main\" page",
-            "match": {},
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 7,
-            "name": "I am navigating to \"settings\" page",
-            "match": {},
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 286500,
-              "status": "skipped"
-            },
-            "line": 8,
-            "name": "Adding \"Dividends\" to Fixed income window",
+            "line": 5,
+            "name": "I am navigating to \"Income\" page",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Dividends\"",
-                  "offset": 7
+                  "val": "\"Income\"",
+                  "offset": 19
                 }
               ],
-              "location": "SettingsPageSteps.adding_to_window(String)"
+              "location": "IncomeSteps.i_am_navigating_to_page(String)"
             },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8511388300,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I fill income form",
+            "match": {
+              "location": "IncomeSteps.i_fill_income_form(String,String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "User"
+                ]
+              },
+              {
+                "cells": [
+                  "description",
+                  "PLAN-6"
+                ]
+              },
+              {
+                "cells": [
+                  "amount",
+                  "30"
+                ]
+              },
+              {
+                "cells": [
+                  "type",
+                  "Salary"
+                ]
+              },
+              {
+                "cells": [
+                  "frequency",
+                  "Weekly"
+                ]
+              }
+            ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 263400,
-              "status": "skipped"
+              "duration": 194336800,
+              "status": "passed"
             },
-            "line": 9,
-            "name": "I am pressing Enter button",
+            "line": 14,
+            "name": "I validate added item is displayed in main data table",
             "match": {
-              "location": "SettingsPageSteps.iAmPressingEnterButton()"
+              "location": "IncomeSteps.iValidateAddedItemIsDisplayedInMainDataTable(String,String\u003e)"
             },
-            "keyword": "Then "
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "User"
+                ]
+              },
+              {
+                "cells": [
+                  "description",
+                  "PLAN-6"
+                ]
+              },
+              {
+                "cells": [
+                  "amount",
+                  "30"
+                ]
+              },
+              {
+                "cells": [
+                  "type",
+                  "Salary"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@income"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-04-21T22:51:14.504Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2217363100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.setUp(Scenario)"
+            }
+          }
+        ],
+        "line": 23,
+        "name": "Add an item to income and verify added item is displayed in main data table",
+        "description": "",
+        "id": "income-page---add-new-income-item;add-an-item-to-income-and-verify-added-item-is-displayed-in-main-data-table;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 767161700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 132299800,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am navigating to \"Income\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Income\"",
+                  "offset": 19
+                }
+              ],
+              "location": "IncomeSteps.i_am_navigating_to_page(String)"
+            },
+            "keyword": "Given "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 8410524700,
+              "status": "passed"
             },
-            "line": 10,
-            "name": "I am verifying \"Dividends\" displayed in Fixed Income  field",
-            "match": {},
-            "keyword": "Then "
+            "line": 6,
+            "name": "I fill income form",
+            "match": {
+              "location": "IncomeSteps.i_fill_income_form(String,String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "Jane"
+                ]
+              },
+              {
+                "cells": [
+                  "description",
+                  "PLAN-6"
+                ]
+              },
+              {
+                "cells": [
+                  "amount",
+                  "99"
+                ]
+              },
+              {
+                "cells": [
+                  "type",
+                  "Rental"
+                ]
+              },
+              {
+                "cells": [
+                  "frequency",
+                  "Monthly"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 210168400,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I validate added item is displayed in main data table",
+            "match": {
+              "location": "IncomeSteps.iValidateAddedItemIsDisplayedInMainDataTable(String,String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "Jane"
+                ]
+              },
+              {
+                "cells": [
+                  "description",
+                  "PLAN-6"
+                ]
+              },
+              {
+                "cells": [
+                  "amount",
+                  "99"
+                ]
+              },
+              {
+                "cells": [
+                  "type",
+                  "Rental"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@income"
           }
         ]
       }
     ],
-    "name": "",
+    "name": "Income page - add new Income item",
     "description": "",
-    "id": "",
+    "id": "income-page---add-new-income-item",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/settings.feature",
-    "tags": []
+    "uri": "file:src/test/resources/features/income.feature",
+    "tags": [
+      {
+        "name": "@income",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
   }
 ]

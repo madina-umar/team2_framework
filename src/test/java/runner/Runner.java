@@ -8,9 +8,11 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         plugin = {"pretty", "html:target/cucumber.html", "rerun:target/Rerun_Failed/LoginRunner.txt", "json:target/cucumber.json"},
-        features = {"src/test/resources/features"},
+        features = {"src/test/resources/features/income.feature"},
         glue = {"steps", "hooks"},
-        dryRun = false
+        tags ="@income",
+        dryRun =false
+
 
 )
 
