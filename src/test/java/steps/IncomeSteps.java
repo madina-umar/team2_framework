@@ -1,6 +1,7 @@
 package steps;
 
 import implementation.IncomePageImplementation;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 
 
@@ -27,5 +28,20 @@ public class IncomeSteps {
     @Then("I verify the following columns are displayed:")
     public void iVerifyTheFollowingColumnsAreDisplayed(List<String> columns) {
         impl.verifyColumnsName(columns);
+    }
+
+    @Then("I read data form the table, Amount and Income Type columns")
+    public void iReadDataFormTheTableAmountAndIncomeTypeColumns() {
+        impl.readDataTable();
+    }
+
+    @And("I calculate the percentages")
+    public void iCalculateThePercentages() {
+        impl.calcPercentages();
+    }
+
+    @Then("I validate the percentages on Pie chart")
+    public void iValidateThePercentagesOnPieChart() {
+        impl.validatePieChart();
     }
 }

@@ -9,15 +9,16 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/IncomeRunner",
                 "rerun:target/Rerun_Failed/IncomeRunner.txt"},
         features = "src/test/resources/features/income.feature",
-//        features = "@target/Rerun_Failed/ManageAccessRunner.txt",
+//        features = "@target/Rerun_Failed/IncomeRunner.txt",
         glue = {"steps", "hooks"}
         //, stepNotifications = true
         , dryRun = false
       //  , tags = "@PLAN-2"
-        ,tags = "@PLAN-5"
+        ,tags = "@PLAN-7"
 
 )
 
 
 public class incomeRunner {
 }
+

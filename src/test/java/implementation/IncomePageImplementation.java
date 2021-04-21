@@ -1,12 +1,15 @@
 package implementation;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import utils.MiscUtils;
 import utils.WebDriverUtils;
 import utils.СucumberLogUtils;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
+
 public class IncomePageImplementation {
     public void clickLink(String linkName) {
         WebElement element = WebDriverUtils.getDriver().findElement(By.id(linkName.toLowerCase()));
@@ -14,6 +17,7 @@ public class IncomePageImplementation {
         MiscUtils.sleep(1000);
         СucumberLogUtils.logPass(linkName + " link was successfully clicked ", true);
     }
+
     public void verifyInputFields(List<String> inputField) {
         for (String each : inputField) {
             WebElement element = WebDriverUtils.getDriver().findElement(By.xpath("//input[@placeholder=\"" + each + "\"]"));
@@ -24,6 +28,7 @@ public class IncomePageImplementation {
             }
         }
     }
+
     public void verifyFieldsDropDown(List<String> dropDown, String dropDownName) {
         WebElement element = WebDriverUtils.getDriver().findElement(By.id(dropDownName.toLowerCase()));
         Select select = new Select(element);
@@ -40,6 +45,7 @@ public class IncomePageImplementation {
             }
         }
     }
+
     public void verifyColumnsName(List<String> columns) {
         List<WebElement> columnList = WebDriverUtils.getDriver().findElements(By.xpath("//tr/th"));
         List<String> stringList = new ArrayList<>();
@@ -53,5 +59,71 @@ public class IncomePageImplementation {
                 СucumberLogUtils.logFail("Columns name  " + each + " are NOT displayed as expected", false);
             }
         }
+    }
+
+    public Map<String, Double> readDataTable() {
+        List<WebElement> amount = WebDriverUtils.getDriver().findElements(By.xpath("//tr[*]//td[3]"));
+        List<WebElement> incomeType = WebDriverUtils.getDriver().findElements(By.xpath("//tr[*]//td[4]"));
+
+        Map<String, Double> map = new HashMap<>();
+
+        for (int i = 0; i < incomeType.size(); i++) {
+            String k = incomeType.get(i).getText();
+            double v = Double.parseDouble(amount.get(i).getText());
+
+            if (map.containsKey(k)) {
+                map.put(k, map.get(k) + v);
+            } else {
+                map.put(k, v);
+            }
+        }
+
+        for (Map.Entry<String, Double> each : map.entrySet()) {
+            СucumberLogUtils.logInfo("Total for each Type: " + each.getKey() + " = " + each.getValue());
+        }
+
+        return map;
+    }
+
+    public List<String> calcPercentages() {
+        Map<String, Double> map = readDataTable();
+        double totalAmount = 0;
+        List<String> percentagesList = new ArrayList<>();
+
+        for (Map.Entry<String, Double> each : map.entrySet()) {
+            totalAmount += each.getValue();
+        }
+
+        for (Map.Entry<String, Double> each : map.entrySet()) {
+            int temp = (int) Math.round((each.getValue() * 100) / totalAmount);
+            String strTemp = temp + "% " + each.getKey();
+            percentagesList.add(strTemp);
+        }
+        Collections.sort(percentagesList);
+        СucumberLogUtils.logInfo("Total Amount: " + totalAmount);
+        percentagesList.forEach(each -> СucumberLogUtils.logInfo("Percentages for each type: " + each));
+
+        return percentagesList;
+    }
+
+    public void validatePieChart() {
+        JavascriptExecutor js = (JavascriptExecutor) WebDriverUtils.getDriver();
+        js.executeScript("window.scrollBy(0,460)");
+        СucumberLogUtils.logPass("", true);
+
+        List<String> percentagesList = calcPercentages();
+        List<WebElement> uiChart = WebDriverUtils.getDriver().findElements(By.cssSelector("#root > div > div > svg > text"));
+
+        List<String> strUiChart = new ArrayList<>();
+        uiChart.forEach(each -> strUiChart.add(each.getText()));
+        Collections.sort(strUiChart);
+
+        if (percentagesList.equals(strUiChart)) {
+            js.executeScript("window.scrollBy(0,750)");
+            СucumberLogUtils.logPass("Pie Chart are displayed as expected", true);
+        } else {
+            СucumberLogUtils.logFail("Pie Chart are NOT displayed as expected", true);
+        }
+
     }
 }

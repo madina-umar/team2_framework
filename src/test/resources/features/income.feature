@@ -35,14 +35,10 @@ Feature: Income page
       | Income Type |
       | Date        |
 
-  @PLAN-2
-  Scenario: PLAN-2 Income page - Data table
+  @PLAN-7
+  Scenario: PLAN-7 Income page - Pie chart
     Given I navigate to Project website
     Then I click "Income" link
-    Then I should see the "PlanIT - Income" page
-    Then I verify the following columns are displayed:
-      | Name        |
-      | Description |
-      | Amount      |
-      | Income Type |
-      | Date        |
+    Then I read data form the table, Amount and Income Type columns
+    And I calculate the percentages
+    Then I validate the percentages on Pie chart
