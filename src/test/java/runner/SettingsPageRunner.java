@@ -12,10 +12,11 @@ import org.junit.runner.RunWith;
         features = {"src/test/resources/features/settings.feature"},
         glue = {"steps", "hooks"},
         dryRun = false,
-        //tags ="@plan-8"
+        tags ="@plan-8"
         //tags = "@plan-9"
       //  tags = "@sanity"
-        tags = "@plan-10"
+       // tags = "@plan-10"
+       // tags = "@smoke"
 
 
 )

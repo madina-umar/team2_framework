@@ -1,5 +1,5 @@
 Feature: Landing Page test
-
+@smoke
   Scenario: Landing page should have navigation tabs
     Given I navigate to Project website
     Then I should see the "PlanIT" page
